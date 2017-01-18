@@ -1,6 +1,6 @@
 ---
 applications:
-  - name: predix-microservice-cf-spring
+  - name: bmab-ms-spr
     buildpack: java_buildpack
     path: target/predix-microservice-cf-spring-1.1.6.jar
     memory: 512M
