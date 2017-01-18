@@ -22,20 +22,20 @@ function makeGraphs(error, recordsJson) {
         return d["Sales"];
     });
 
-    var upper80Dim = ndx.dimension(function(d){
-        return d["Upper80"];
-    });
-
     var upper90Dim = ndx.dimension(function(d){
         return d["Upper90"];
     });
 
-    var lower80Dim = ndx.dimension(function(d){
-        return d["Lower80"];
+    var upper95Dim = ndx.dimension(function(d){
+        return d["Upper95"];
     });
 
     var lower90Dim = ndx.dimension(function(d){
         return d["Lower90"];
+    });
+
+    var lower95Dim = ndx.dimension(function(d){
+        return d["Lower95"];
     });
 
     var remarksDim = ndx.dimension(function(d){
@@ -60,7 +60,7 @@ function makeGraphs(error, recordsJson) {
     });
 
     var lowerGroup = dateDim.group().reduceSum(function(d){
-        return d["Lower90"];
+        return d["Lower95"];
     });
 
     var salesGroup = dateDim.group().reduceSum(function(d){
@@ -68,7 +68,7 @@ function makeGraphs(error, recordsJson) {
     });
 
     var upperGroup = dateDim.group().reduceSum(function(d){
-        return d["Upper90"];
+        return d["Upper95"];
     });
 
     var minDate = dateDim.bottom(1)[0]["Date"];
@@ -114,11 +114,11 @@ function makeGraphs(error, recordsJson) {
 			.group(salesGroup, "Sales")
 			.renderArea(true),
 		dc.lineChart(timeChart)
-			.group(upperGroup, "80% Upper Limit")
+			.group(upperGroup, "95% Upper Limit")
 			.ordinalColors(["orange"])
 			.renderArea(true),
 		dc.lineChart(timeChart)
-			.group(lowerGroup, "80% Lower Limit")
+			.group(lowerGroup, "95% Lower Limit")
 			.ordinalColors(["orange"])
 			.renderArea(true)
 	]);
