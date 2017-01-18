@@ -16,9 +16,12 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactory;
+import org.springframework.boot.json.JacksonJsonParser;
+import org.springframework.boot.json.JsonParser;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.MutablePropertySources;
 import org.springframework.stereotype.Controller;
@@ -81,6 +84,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * 
  * @author predix
  */
+@ImportResource( {
+	 "classpath*:META-INF/spring/predix-rest-client-scan-context.xml" 
+})
+
 @EnableAutoConfiguration(exclude =
 {
         // Add any configuration loading call you want to exclude
@@ -93,6 +100,17 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class Application
 {
     private static final Logger log = LoggerFactory.getLogger(Application.class);
+    
+    /**
+     * Added for parsing
+     * a JacksonJsonParser() implementation
+     * @return - parser bean
+     */
+    @Bean
+    public JsonParser jsonParser() {
+    	JsonParser parser = new JacksonJsonParser();
+    	return parser;
+    }
     
     @SuppressWarnings("javadoc")
     @Value("${spring.profiles.active:local}")
