@@ -245,6 +245,15 @@ public class Application
 
     /**
      * 
+     */
+    @RequestMapping("/analytic")
+    public String analyticPage()
+    {   
+        return "index2"; //$NON-NLS-1$
+    }
+
+    /**
+     * 
      * @param request
      *            - HttpServletRequest
      * @param response
