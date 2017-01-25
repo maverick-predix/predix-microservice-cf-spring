@@ -1,11 +1,11 @@
 ---
 applications:
-  - name: mavs-test-predix-microservice-cf-spring
+  - name: <app-name> #e.g., mavs-test-predix-microservice-cf-spring
     buildpack: java_buildpack
     path: target/predix-microservice-cf-spring-1.1.6.jar
     memory: 512M
     timeout : 180
 services:
-    - postgres-test-service
+    - <postgresql-service-name> #e.g., postgres-test-service
 env:
    SPRING_PROFILES_ACTIVE : cloud  
