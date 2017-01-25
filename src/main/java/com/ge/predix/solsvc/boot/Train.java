@@ -39,7 +39,7 @@ public class Train implements Serializable {
 	private Integer customers;
 	private Integer open;
 	private Integer promo;
-	private Integer stateHoliday;
+	private String stateHoliday;
 	private Integer schoolHoliday;
 	
 	public Integer getTrainId() {
@@ -84,10 +84,10 @@ public class Train implements Serializable {
 	public void setPromo(Integer promo) {
 		this.promo = promo;
 	}
-	public Integer getStateHoliday() {
+	public String getStateHoliday() {
 		return stateHoliday;
 	}
-	public void setStateHoliday(Integer stateHoliday) {
+	public void setStateHoliday(String stateHoliday) {
 		this.stateHoliday = stateHoliday;
 	}
 	public Integer getSchoolHoliday() {
