@@ -30,7 +30,7 @@ public class TrainAndStore {
 	private Integer customers;
 	private Integer open;
 	private Integer promo;
-	private Integer stateHoliday;
+	private String stateHoliday;
 	private Integer schoolHoliday;
 	private Integer storeId;
 	private String storeType;
@@ -86,10 +86,10 @@ public class TrainAndStore {
 	public void setPromo(Integer promo) {
 		this.promo = promo;
 	}
-	public Integer getStateHoliday() {
+	public String getStateHoliday() {
 		return stateHoliday;
 	}
-	public void setStateHoliday(Integer stateHoliday) {
+	public void setStateHoliday(String stateHoliday) {
 		this.stateHoliday = stateHoliday;
 	}
 	public Integer getSchoolHoliday() {
