@@ -28,12 +28,12 @@
 		    	<ul class="nav navbar-nav navbar-right">
 					<li>
 						<a href="/" id="homeNav">
-							<span><i class="material-icons ">home</i> Home</span>
+							<span><i id="ic1" class="material-icons ">home</i> Home</span>
 						</a>
 					</li>
 					<li>
 						<a href="/analytic" id="dashboardNav">
-							<span><i class="material-icons ">dashboard</i> Anomalies</span>
+							<span><i id="ic2" class="material-icons ">dashboard</i> Anomalies</span>
 						</a>
 					</li>
 				</ul>
@@ -125,6 +125,31 @@
             </div>
         </div>
     </div>
+    
+    <!-- Modals -->
+		<div class="modal fade bs-example-modal-sm" id="loadingModal" tabindex="-1"
+		    role="dialog" aria-hidden="true" data-backdrop="static">
+		    <div class="vertical-alignment-helper">
+			    <div class="modal-dialog modal-sm vertical-align-center">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <h4 class="modal-title">
+			                    <span>Loading data ...</span> 
+			                 </h4>
+			            </div>
+			            <div class="modal-body">
+			                <div class="progress">
+			                    <div class="progress-bar progress-bar-info
+			                    progress-bar-striped active"
+			                    style="width: 100%">
+			                    </div>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+		    </div>
+		</div>
+	<!-- End Modals -->    
     <script src="plugins/js/jquery.min.js"></script>
     <script src="plugins/js/bootstrap.min.js"></script>
     <script src="plugins/js/underscore-min.js"></script>

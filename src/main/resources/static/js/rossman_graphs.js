@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	$('#loadingModal').modal('show');
 //	var url = window.location.href,
 //	var url = "https://initial-rossman-predix-jpa-sv-11917.run.aws-usw02-pr.ice.predix.io";
 	var url = window.location.href + "sales";
@@ -399,5 +400,6 @@ function makeGraphs(error, recordsJson) {
         .xAxis().ticks(4);
 
     dc.renderAll();
+    $('#loadingModal').modal('hide');
     console.log("End!");
 }
