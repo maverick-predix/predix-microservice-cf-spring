@@ -69,7 +69,7 @@ public class SalesController {
         
         for(TrainAndStore ts : sales){
         	//DayOfWeek += ts.getDayOfWeek() + ", ";
-        	DayOfWeek += ts.getDayOfWeek() + ", ";
+        	DayOfWeek += ts.getDayOfWeek() + ", "; 
         	Customers += ts.getCustomers() + ", ";
         	CompetitionOpenSinceMonth += ts.getCompetitionOpenMonth() + ", ";
         	StateHoliday += ts.getStateHoliday() + ", ";
@@ -90,6 +90,27 @@ public class SalesController {
         	Store += ts.getStoreId() + ", ";
 
         }
+        
+        DayOfWeek = DayOfWeek.substring(0,DayOfWeek.length()-2);
+        Customers = Customers.substring(0,Customers.length()-2);
+        CompetitionOpenSinceMonth = CompetitionOpenSinceMonth.substring(0,CompetitionOpenSinceMonth.length()-2);
+        StateHoliday = StateHoliday.substring(0,StateHoliday.length()-2);
+        StoreName = StoreName.substring(0,StoreName.length()-2);
+        Promo = Promo.substring(0,Promo.length()-2);
+        CompetitionOpenSinceYear = CompetitionOpenSinceYear.substring(0,CompetitionOpenSinceYear.length()-2);
+        Promo2SinceWeek = Promo2SinceWeek.substring(0,Promo2SinceWeek.length()-2);
+        CompetitionDistance = CompetitionDistance.substring(0,CompetitionDistance.length()-2);
+        Sales = Sales.substring(0,Sales.length()-2);
+        PromoInterval = PromoInterval.substring(0,PromoInterval.length()-2);
+        Promo2 = Promo2.substring(0,Promo2.length()-2);
+        Promo2SinceYear = Promo2SinceYear.substring(0,Promo2SinceYear.length()-2);
+        Date = Date.substring(0,Date.length()-2);
+        StoreType = StoreType.substring(0,StoreType.length()-2);
+        Assortment = Assortment.substring(0,Assortment.length()-2);
+        Open = Open.substring(0,Open.length()-2);
+        SchoolHoliday = SchoolHoliday.substring(0,SchoolHoliday.length()-2);
+        Store = Store.substring(0,Store.length()-2);
+
         
         //DayOfWeek += "],";
         DayOfWeek += "], ";
