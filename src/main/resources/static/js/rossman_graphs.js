@@ -206,6 +206,7 @@ function makeGraphsEdited(error, recordsJson) {
         .xAxis().ticks(4);
 
     dc.renderAll();
+    $('#loadingModal').modal('hide');
     console.log("End!");
 }
 
