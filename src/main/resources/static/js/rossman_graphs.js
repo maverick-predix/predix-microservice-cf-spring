@@ -119,7 +119,7 @@ function makeGraphsEdited(error, recordsJson) {
     var maxDate = dateDim.top(1)[0]["salesDate"];
 
     //Charts
-    var timeChart = dc.barChart("#time-chart");
+    var timeChart = dc.lineChart("#time-chart");
     var typeChart = dc.rowChart("#gender-row-chart");
     var assortmentChart = dc.rowChart("#age-segment-row-chart");
     var top5Chart = dc.rowChart("#location-row-chart");
@@ -145,16 +145,15 @@ function makeGraphsEdited(error, recordsJson) {
         .group(allCustomers)
 
     timeChart
-        .width(850)
-        .height(162)
         .margins({top: 10, right: 50, bottom: 20, left: 50})
         .dimension(dateDim)
         .group(recordsByDate)
         .mouseZoomable(true)
         .x(d3.time.scale().domain([minDate, maxDate]))
         .elasticY(true)
-        .yAxis().ticks(4);
-
+	.round(d3.time.month.round)
+	.xUnits(d3.time.months)
+	
     typeChart
         .width(300)
         .height(150)
