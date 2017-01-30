@@ -145,6 +145,8 @@ function makeGraphsEdited(error, recordsJson) {
         .group(allCustomers)
 
     timeChart
+        .width(850)
+        .height(162)    
         .margins({top: 10, right: 50, bottom: 20, left: 50})
         .dimension(dateDim)
         .group(recordsByDate)
