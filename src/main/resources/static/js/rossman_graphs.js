@@ -20,9 +20,9 @@ function makeGraphsEdited(error, recordsJson) {
     var records = recordsJson;
     console.log(records);
     var dateFormat = d3.time.format("%Y-%m-%d");
-    /*records.forEach(function(d){
-    	d["salesDate"] = moment(d["salesDate"]).format("YYYY-MM-DD");
-    });*/
+    records.forEach(function(d){
+    	d["salesDate"] = new Date(moment(d["salesDate"]).format("YYYY-MM-DD"));
+    });
 
 
     //Dimensions
