@@ -153,8 +153,9 @@ function makeGraphsEdited(error, recordsJson) {
         .mouseZoomable(true)
         .x(d3.time.scale().domain([minDate, maxDate]))
         .elasticY(true)
-	.round(d3.time.month.round)
-	.xUnits(d3.time.months)
+        .yAxis().ticks(4);
+	//.round(d3.time.month.round)
+	//.xUnits(d3.time.months)
 	
     typeChart
         .width(300)
